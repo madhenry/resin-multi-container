@@ -1,22 +1,5 @@
 version: '2'
 
-volumes:
-    downloads:
-    transmission-config:
-
 services:
-    transmission:
-        build: transmission
-        volumes:
-            - downloads:/downloads:rw
-            - transmission-config:/config:rw
-        ports:
-            - 9091:9091
-            - 49300:49300
-
-    static-server:
-        build: static-server
-        volumes_from:
-            - transmission:rw
-        ports:
-            - 80:80
+    hklifx:
+        build: hklifx
